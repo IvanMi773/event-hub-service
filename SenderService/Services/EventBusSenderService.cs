@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Azure.Messaging.EventHubs;
 using Azure.Messaging.EventHubs.Producer;
 using Microsoft.AspNetCore.Mvc.Diagnostics;
+using Microsoft.Extensions.Configuration;
 using SenderService.Models;
 using EventData = Azure.Messaging.EventHubs.EventData;
 
@@ -12,16 +13,27 @@ namespace SenderService.Services
 {
     public class EventBusSenderService
     {
-        private const string ConnectionString =
-            "Endpoint=sb://test-eventhub.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=7CuCEzEn0FC5GjSG5Xrft0HepzlT6ABX/Pgi9M6ixgI=";
-
-        private const string EventHubName = "eventhub";
+        private const string EhubNamespaceConnectionStringKey = "EhubNamespaceConnectionString";
+        private const string EventHubNameKey = "EventHubName";
+        
+        private static IConfiguration Configuration { get; set; }
 
         private static EventHubProducerClient _producerClient;
 
+        public EventBusSenderService(IConfiguration configuration)
+        {
+            if (Configuration == null)
+            {
+                Configuration = configuration;
+            }
+        }
+
         public async Task SendMessage(Root root)
         {
-            _producerClient = new EventHubProducerClient(ConnectionString, EventHubName);
+            _producerClient = new EventHubProducerClient(
+                Configuration[EhubNamespaceConnectionStringKey], 
+                Configuration[EventHubNameKey]
+                );
 
             using EventDataBatch eventBatch = await _producerClient.CreateBatchAsync();
             

@@ -7,9 +7,38 @@
     <projectFile profileName="SenderService">SenderService/SenderService.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="38501d3d-aae1-4bcc-94e1-1040f2cdcaed" name="Changes" comment="small fixes &amp; improvements">
-      <change beforePath="$PROJECT_DIR$/EventHubService/Repositories/RedisRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/EventHubService/Repositories/RedisRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SenderService/Controllers/WeatherForecastController.cs" beforeDir="false" />
+    <list default="true" id="38501d3d-aae1-4bcc-94e1-1040f2cdcaed" name="Changes" comment="delete unused files">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.EventHubService/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.EventHubService/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EventHubService/Services/EventHubReceiverService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/EventHubService/Services/EventHubReceiverService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EventHubService/Services/IEventHubReceiverService.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/EventHubService/bin/Debug/net5.0/EventHubService.dll" beforeDir="false" afterPath="$PROJECT_DIR$/EventHubService/bin/Debug/net5.0/EventHubService.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EventHubService/bin/Debug/net5.0/EventHubService.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/EventHubService/bin/Debug/net5.0/EventHubService.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EventHubService/bin/Debug/net5.0/ref/EventHubService.dll" beforeDir="false" afterPath="$PROJECT_DIR$/EventHubService/bin/Debug/net5.0/ref/EventHubService.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EventHubService/obj/Debug/net5.0/EventHubService.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/EventHubService/obj/Debug/net5.0/EventHubService.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EventHubService/obj/Debug/net5.0/EventHubService.dll" beforeDir="false" afterPath="$PROJECT_DIR$/EventHubService/obj/Debug/net5.0/EventHubService.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EventHubService/obj/Debug/net5.0/EventHubService.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/EventHubService/obj/Debug/net5.0/EventHubService.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EventHubService/obj/Debug/net5.0/ref/EventHubService.dll" beforeDir="false" afterPath="$PROJECT_DIR$/EventHubService/obj/Debug/net5.0/ref/EventHubService.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EventHubService/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/EventHubService/obj/rider.project.restore.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SenderService/SenderService.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/SenderService/SenderService.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SenderService/Services/EventBusSenderService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SenderService/Services/EventBusSenderService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SenderService/bin/Debug/net5.0/SenderService.deps.json" beforeDir="false" afterPath="$PROJECT_DIR$/SenderService/bin/Debug/net5.0/SenderService.deps.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SenderService/bin/Debug/net5.0/SenderService.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SenderService/bin/Debug/net5.0/SenderService.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SenderService/bin/Debug/net5.0/SenderService.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/SenderService/bin/Debug/net5.0/SenderService.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SenderService/bin/Debug/net5.0/ref/SenderService.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SenderService/bin/Debug/net5.0/ref/SenderService.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SenderService/obj/Debug/net5.0/SenderService.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SenderService/obj/Debug/net5.0/SenderService.AssemblyInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SenderService/obj/Debug/net5.0/SenderService.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/SenderService/obj/Debug/net5.0/SenderService.AssemblyInfoInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SenderService/obj/Debug/net5.0/SenderService.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/SenderService/obj/Debug/net5.0/SenderService.assets.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SenderService/obj/Debug/net5.0/SenderService.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/SenderService/obj/Debug/net5.0/SenderService.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SenderService/obj/Debug/net5.0/SenderService.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SenderService/obj/Debug/net5.0/SenderService.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SenderService/obj/Debug/net5.0/SenderService.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/SenderService/obj/Debug/net5.0/SenderService.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SenderService/obj/Debug/net5.0/ref/SenderService.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SenderService/obj/Debug/net5.0/ref/SenderService.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SenderService/obj/SenderService.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/SenderService/obj/SenderService.csproj.nuget.dgspec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SenderService/obj/SenderService.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/SenderService/obj/SenderService.csproj.nuget.g.props" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SenderService/obj/SenderService.csproj.nuget.g.targets" beforeDir="false" afterPath="$PROJECT_DIR$/SenderService/obj/SenderService.csproj.nuget.g.targets" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SenderService/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/SenderService/obj/project.assets.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SenderService/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/SenderService/obj/project.nuget.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SenderService/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/SenderService/obj/project.packagespec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SenderService/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/SenderService/obj/rider.project.restore.info" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,6 +47,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="mock:///home/imykhailov/RiderProjects/EventHubService/EventHubService/Repositories/RedisRepository.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="ProjectId" id="1xa4H93oDt5S22cjdlQcZo33pHo" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -108,7 +140,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1630579774597</updated>
-      <workItem from="1630579782633" duration="4279000" />
+      <workItem from="1630579782633" duration="6872000" />
     </task>
     <task id="LOCAL-00001" summary="small fixes &amp; improvements">
       <created>1630586461695</created>
@@ -117,7 +149,14 @@
       <option name="project" value="LOCAL" />
       <updated>1630586461695</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="delete unused files">
+      <created>1630586819980</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1630586819980</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -141,6 +180,7 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="small fixes &amp; improvements" />
-    <option name="LAST_COMMIT_MESSAGE" value="small fixes &amp; improvements" />
+    <MESSAGE value="delete unused files" />
+    <option name="LAST_COMMIT_MESSAGE" value="delete unused files" />
   </component>
 </project>

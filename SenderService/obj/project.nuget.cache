@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "XKeWBCq5QaRzKTFF5j04GaAYpmt7nalwwuThE27uuiJQx3HgNko1KXYprUkILi/FR2uwJjx+WdaT/HxcO0F48Q==",
+  "dgSpecHash": "OHeVCL+ByRJn4KtiB1Wcms0d1X1Ya4Cgm2yCPJIp4rsEPUeV7NhtqBxMeYK8845hKqPYbbxFjyhw+iB2Lvna5g==",
   "success": true,
   "projectFilePath": "/home/imykhailov/RiderProjects/EventHubService/SenderService/SenderService.csproj",
   "expectedPackageFiles": [
@@ -10,6 +10,15 @@
     "/home/imykhailov/.nuget/packages/microsoft.azure.amqp/2.5.1/microsoft.azure.amqp.2.5.1.nupkg.sha512",
     "/home/imykhailov/.nuget/packages/microsoft.bcl.asyncinterfaces/1.0.0/microsoft.bcl.asyncinterfaces.1.0.0.nupkg.sha512",
     "/home/imykhailov/.nuget/packages/microsoft.extensions.apidescription.server/3.0.0/microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
+    "/home/imykhailov/.nuget/packages/microsoft.extensions.configuration/5.0.0/microsoft.extensions.configuration.5.0.0.nupkg.sha512",
+    "/home/imykhailov/.nuget/packages/microsoft.extensions.configuration.abstractions/5.0.0/microsoft.extensions.configuration.abstractions.5.0.0.nupkg.sha512",
+    "/home/imykhailov/.nuget/packages/microsoft.extensions.configuration.fileextensions/5.0.0/microsoft.extensions.configuration.fileextensions.5.0.0.nupkg.sha512",
+    "/home/imykhailov/.nuget/packages/microsoft.extensions.configuration.json/5.0.0/microsoft.extensions.configuration.json.5.0.0.nupkg.sha512",
+    "/home/imykhailov/.nuget/packages/microsoft.extensions.configuration.usersecrets/5.0.0/microsoft.extensions.configuration.usersecrets.5.0.0.nupkg.sha512",
+    "/home/imykhailov/.nuget/packages/microsoft.extensions.fileproviders.abstractions/5.0.0/microsoft.extensions.fileproviders.abstractions.5.0.0.nupkg.sha512",
+    "/home/imykhailov/.nuget/packages/microsoft.extensions.fileproviders.physical/5.0.0/microsoft.extensions.fileproviders.physical.5.0.0.nupkg.sha512",
+    "/home/imykhailov/.nuget/packages/microsoft.extensions.filesystemglobbing/5.0.0/microsoft.extensions.filesystemglobbing.5.0.0.nupkg.sha512",
+    "/home/imykhailov/.nuget/packages/microsoft.extensions.primitives/5.0.0/microsoft.extensions.primitives.5.0.0.nupkg.sha512",
     "/home/imykhailov/.nuget/packages/microsoft.netcore.platforms/1.0.2/microsoft.netcore.platforms.1.0.2.nupkg.sha512",
     "/home/imykhailov/.nuget/packages/microsoft.netcore.targets/1.0.1/microsoft.netcore.targets.1.0.1.nupkg.sha512",
     "/home/imykhailov/.nuget/packages/microsoft.openapi/1.2.3/microsoft.openapi.1.2.3.nupkg.sha512",

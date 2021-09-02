@@ -10,30 +10,38 @@ using Azure.Storage.Blobs;
 using EventHubService.Models;
 using EventHubService.Repositories;
 using EventHubService.Services.Validators;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 
 namespace EventHubService.Services
 {
-    public class EventHubReceiverService : IEventHubReceiverService, IHostedService
+    public class EventHubReceiverService : IHostedService
     {
-        private const string EhubNamespaceConnectionString = "Endpoint=sb://test-eventhub.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=7CuCEzEn0FC5GjSG5Xrft0HepzlT6ABX/Pgi9M6ixgI=";
-        private const string EventHubName = "eventhub";
-        private const string BlobStorageConnectionString = "DefaultEndpointsProtocol=https;AccountName=teststorage32138;AccountKey=OtSjkQZr6PjDw0yi0C0jwNOba5cFlu4A0CD5MNSmiJ7/zGpPbhK6yBZeBgTS8S49OYXgXW3EBf29RFrXLRn3Tw==;EndpointSuffix=core.windows.net";
-        private const string BlobContainerName = "test-container";
+        private const string EhubNamespaceConnectionStringKey = "EhubNamespaceConnectionString";
+        private const string EventHubNameKey = "EventHubName";
+        private const string BlobStorageConnectionStringKey = "BlobStorageConnectionString";
+        private const string BlobContainerNameKey = "BlobContainerName";
+        
         private static BlobContainerClient _storageClient;      
         private static EventProcessorClient _processor;
 
+        private static IConfiguration Configuration { get; set; }
         private readonly ILogger<EventHubReceiverService> _logger;
 
         private readonly RedisRepository _redisRepository;
         private readonly RootValidator _rootValidator;
 
-        public EventHubReceiverService(ILogger<EventHubReceiverService> logger, RedisRepository redisRepository, RootValidator rootValidator)
+        public EventHubReceiverService(IConfiguration configuration, ILogger<EventHubReceiverService> logger, RedisRepository redisRepository, RootValidator rootValidator)
         {
             _logger = logger;
             _redisRepository = redisRepository;
             _rootValidator = rootValidator;
+            
+            if (Configuration == null)
+            {
+                Configuration = configuration;
+            }
         }
 
         public async Task ProcessEventHandler(ProcessEventArgs eventArgs)
@@ -65,8 +73,8 @@ namespace EventHubService.Services
         public Task StartAsync(CancellationToken cancellationToken)
         {
             string consumerGroup = EventHubConsumerClient.DefaultConsumerGroupName;
-            _storageClient = new BlobContainerClient(BlobStorageConnectionString, BlobContainerName);
-            _processor = new EventProcessorClient(_storageClient, consumerGroup, EhubNamespaceConnectionString, EventHubName);
+            _storageClient = new BlobContainerClient(Configuration[BlobStorageConnectionStringKey], Configuration[BlobContainerNameKey]);
+            _processor = new EventProcessorClient(_storageClient, consumerGroup, Configuration[EhubNamespaceConnectionStringKey], Configuration[EventHubNameKey]);
 
             _processor.ProcessEventAsync += ProcessEventHandler;
             _processor.ProcessErrorAsync += ProcessErrorHandler;
