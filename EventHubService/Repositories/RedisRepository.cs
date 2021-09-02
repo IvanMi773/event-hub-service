@@ -16,7 +16,7 @@ namespace EventHubService.Repositories
         public void PushStringToList(string str)
         {
             IDatabase cache = _redisConfig.GetDatabase();
-            Console.WriteLine(cache.ListLeftPush("roots", str));
+            Console.WriteLine(cache.ListRightPush("roots", str));
         }
     }
 }
