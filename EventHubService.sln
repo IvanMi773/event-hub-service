@@ -2,6 +2,8 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventHubService", "EventHubService\EventHubService.csproj", "{EC630A88-81B1-4C4D-BB72-AFE53CBC5E3B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SenderService", "SenderService\SenderService.csproj", "{F275801D-1D0B-40AF-B94E-8DC5D36E5311}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +14,9 @@ Global
 		{EC630A88-81B1-4C4D-BB72-AFE53CBC5E3B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EC630A88-81B1-4C4D-BB72-AFE53CBC5E3B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EC630A88-81B1-4C4D-BB72-AFE53CBC5E3B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F275801D-1D0B-40AF-B94E-8DC5D36E5311}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F275801D-1D0B-40AF-B94E-8DC5D36E5311}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F275801D-1D0B-40AF-B94E-8DC5D36E5311}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F275801D-1D0B-40AF-B94E-8DC5D36E5311}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
