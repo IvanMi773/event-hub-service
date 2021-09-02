@@ -15,7 +15,7 @@ using Microsoft.Extensions.Logging;
 
 namespace EventHubService.Services
 {
-    public class EventHubReceiverService : IHostedService
+    public class EventHubReceiverService : IEventHubReceiverService, IHostedService
     {
         private const string EhubNamespaceConnectionString = "Endpoint=sb://test-eventhub.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=7CuCEzEn0FC5GjSG5Xrft0HepzlT6ABX/Pgi9M6ixgI=";
         private const string EventHubName = "eventhub";
@@ -36,7 +36,7 @@ namespace EventHubService.Services
             _rootValidator = rootValidator;
         }
 
-        private async Task ProcessEventHandler(ProcessEventArgs eventArgs)
+        public async Task ProcessEventHandler(ProcessEventArgs eventArgs)
         {
             var jsonStr = Encoding.UTF8.GetString(eventArgs.Data.Body.ToArray());
             var receivedModel = JsonSerializer.Deserialize<Root>(jsonStr);
@@ -54,7 +54,7 @@ namespace EventHubService.Services
             await eventArgs.UpdateCheckpointAsync(eventArgs.CancellationToken);
         }
 
-        private Task ProcessErrorHandler(ProcessErrorEventArgs eventArgs)
+        public Task ProcessErrorHandler(ProcessErrorEventArgs eventArgs)
         {
             Console.WriteLine($"\tPartition '{ eventArgs.PartitionId}': an unhandled exception was encountered. This was not expected to happen.");
             Console.WriteLine(eventArgs.Exception.Message);
@@ -77,7 +77,7 @@ namespace EventHubService.Services
 
         public async Task StopAsync(CancellationToken cancellationToken)
         {
-            await _processor.StopProcessingAsync();
+            await _processor.StopProcessingAsync(cancellationToken);
         }
     }
 }
