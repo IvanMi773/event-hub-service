@@ -2,6 +2,10 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using EventHubService.Configuration;
+using EventHubService.Repositories;
+using EventHubService.Services;
+using EventHubService.Services.Validators;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -31,6 +35,14 @@ namespace EventHubService
             {
                 c.SwaggerDoc("v1", new OpenApiInfo {Title = "EventHubService", Version = "v1"});
             });
+            
+            // Hosted services
+            services.AddHostedService<EventHubReceiverService>();
+
+            // Singletons
+            services.AddSingleton<RedisRepository>();
+            services.AddSingleton<RedisConfig>();
+            services.AddSingleton<RootValidator>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
