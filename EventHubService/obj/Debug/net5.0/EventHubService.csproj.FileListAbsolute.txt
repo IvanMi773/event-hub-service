@@ -43,3 +43,4 @@
 /home/imykhailov/RiderProjects/EventHubService/EventHubService/obj/Debug/net5.0/ref/EventHubService.dll
 /home/imykhailov/RiderProjects/EventHubService/EventHubService/obj/Debug/net5.0/EventHubService.pdb
 /home/imykhailov/RiderProjects/EventHubService/EventHubService/obj/Debug/net5.0/EventHubService.genruntimeconfig.cache
+/home/imykhailov/RiderProjects/EventHubService/EventHubService/bin/Debug/net5.0/Newtonsoft.Json.dll

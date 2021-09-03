@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "ClluIJgiMLAWTnn9Mo7OEBz2PbbqJpsYUNlNxp/mTTdeG9mtrRvKHec9bmOItq3vNl0cffr1CAvgW3zxXbeeSg==",
+  "dgSpecHash": "IIvCMvWNYlJDxBpHah8lnhq9MEMJvXOmsZLc3aDbArXr+CjzlYxBXdEhkEXv+XONDsFSLCd22PlE9C9v0iueKA==",
   "success": true,
   "projectFilePath": "/home/imykhailov/RiderProjects/EventHubService/EventHubService/EventHubService.csproj",
   "expectedPackageFiles": [
@@ -28,6 +28,7 @@
     "/home/imykhailov/.nuget/packages/microsoft.win32.primitives/4.0.1/microsoft.win32.primitives.4.0.1.nupkg.sha512",
     "/home/imykhailov/.nuget/packages/microsoft.win32.registry/5.0.0/microsoft.win32.registry.5.0.0.nupkg.sha512",
     "/home/imykhailov/.nuget/packages/microsoft.win32.systemevents/5.0.0/microsoft.win32.systemevents.5.0.0.nupkg.sha512",
+    "/home/imykhailov/.nuget/packages/newtonsoft.json/13.0.1/newtonsoft.json.13.0.1.nupkg.sha512",
     "/home/imykhailov/.nuget/packages/pipelines.sockets.unofficial/2.2.0/pipelines.sockets.unofficial.2.2.0.nupkg.sha512",
     "/home/imykhailov/.nuget/packages/runtime.native.system/4.0.0/runtime.native.system.4.0.0.nupkg.sha512",
     "/home/imykhailov/.nuget/packages/runtime.native.system.net.http/4.0.1/runtime.native.system.net.http.4.0.1.nupkg.sha512",

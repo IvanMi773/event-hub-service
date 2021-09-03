@@ -1,6 +1,5 @@
 using System;
 using System.Text;
-using System.Text.Json;
 using System.Threading;
 using System.Threading.Tasks;
 using Azure.Messaging.EventHubs;
@@ -9,10 +8,10 @@ using Azure.Messaging.EventHubs.Processor;
 using Azure.Storage.Blobs;
 using EventHubService.Models;
 using EventHubService.Repositories;
-using EventHubService.Services.Validators;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Newtonsoft.Json;
 
 namespace EventHubService.Services
 {
@@ -29,14 +28,12 @@ namespace EventHubService.Services
         private static IConfiguration Configuration { get; set; }
         private readonly ILogger<EventHubReceiverService> _logger;
 
-        private readonly RedisRepository _redisRepository;
-        private readonly RootValidator _rootValidator;
+        private readonly IRedisRepository _redisRepository;
 
-        public EventHubReceiverService(IConfiguration configuration, ILogger<EventHubReceiverService> logger, RedisRepository redisRepository, RootValidator rootValidator)
+        public EventHubReceiverService(IConfiguration configuration, ILogger<EventHubReceiverService> logger, IRedisRepository redisRepository)
         {
             _logger = logger;
             _redisRepository = redisRepository;
-            _rootValidator = rootValidator;
             
             if (Configuration == null)
             {
@@ -47,25 +44,34 @@ namespace EventHubService.Services
         public async Task ProcessEventHandler(ProcessEventArgs eventArgs)
         {
             var jsonStr = Encoding.UTF8.GetString(eventArgs.Data.Body.ToArray());
-            var receivedModel = JsonSerializer.Deserialize<Root>(jsonStr);
-
-            if (_rootValidator.Validate(receivedModel))
+            
+            try
             {
+                var receivedModel = JsonConvert.DeserializeObject<Root>(jsonStr);
                 _logger.LogInformation("Good object was received:\n{name}", jsonStr);
-                _redisRepository.PushStringToList(jsonStr);
+
+                try
+                {
+                    _redisRepository.PushStringToList(jsonStr);
+                    await eventArgs.UpdateCheckpointAsync(eventArgs.CancellationToken);
+                }
+                catch (Exception)
+                {
+                    _logger.LogWarning("Invalid object was received:\n{name}", jsonStr);
+                }
             }
-            else
+            catch (Exception)
             {
                 _logger.LogWarning("Invalid object was received:\n{name}", jsonStr);
+                
+                await eventArgs.UpdateCheckpointAsync(eventArgs.CancellationToken);
             }
-
-            await eventArgs.UpdateCheckpointAsync(eventArgs.CancellationToken);
         }
-
+        
         public Task ProcessErrorHandler(ProcessErrorEventArgs eventArgs)
         {
-            Console.WriteLine($"\tPartition '{ eventArgs.PartitionId}': an unhandled exception was encountered. This was not expected to happen.");
-            Console.WriteLine(eventArgs.Exception.Message);
+            _logger.LogWarning($"\tPartition '{ eventArgs.PartitionId}': an unhandled exception was encountered. This was not expected to happen.");
+            _logger.LogWarning(eventArgs.Exception.Message);
             
             return Task.CompletedTask;
         }
@@ -85,7 +91,7 @@ namespace EventHubService.Services
 
         public async Task StopAsync(CancellationToken cancellationToken)
         {
-            await _processor.StopProcessingAsync(cancellationToken);
+            await _processor?.StopProcessingAsync(cancellationToken);
         }
     }
 }

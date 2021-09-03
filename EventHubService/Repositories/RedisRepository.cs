@@ -1,22 +1,25 @@
 using System;
-using EventHubService.Configuration;
+using EventHubService.Providers;
+using Microsoft.Extensions.Logging;
 using StackExchange.Redis;
 
 namespace EventHubService.Repositories
 {
     public class RedisRepository : IRedisRepository
     {
-        private readonly RedisConfig _redisConfig;
+        private readonly RedisProvider _redisConfig;
+        private readonly ILogger<RedisRepository> _logger;
 
-        public RedisRepository(RedisConfig redisConfig)
+        public RedisRepository(RedisProvider redisConfig, ILogger<RedisRepository> logger)
         {
             _redisConfig = redisConfig;
+            _logger = logger;
         }
 
         public void PushStringToList(string str)
         {
             IDatabase cache = _redisConfig.GetDatabase();
-            Console.WriteLine(cache.ListRightPush("roots", str));
+            _logger.LogInformation(cache.ListRightPush("roots", str).ToString());
         }
     }
 }

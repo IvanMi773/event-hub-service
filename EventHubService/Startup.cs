@@ -2,10 +2,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using EventHubService.Configuration;
+using EventHubService.Providers;
 using EventHubService.Repositories;
 using EventHubService.Services;
-using EventHubService.Services.Validators;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -40,9 +39,8 @@ namespace EventHubService
             services.AddHostedService<EventHubReceiverService>();
 
             // Singletons
-            services.AddSingleton<RedisRepository>();
-            services.AddSingleton<RedisConfig>();
-            services.AddSingleton<RootValidator>();
+            services.AddSingleton<IRedisRepository, RedisRepository>();
+            services.AddSingleton<RedisProvider>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

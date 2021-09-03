@@ -4,32 +4,28 @@ using System.Threading;
 using Microsoft.Extensions.Configuration;
 using StackExchange.Redis;
 
-namespace EventHubService.Configuration
+namespace EventHubService.Providers
 {
-    public class RedisConfig
+    public class RedisProvider
     {
         private static IConfiguration Configuration { get; set; }
         
         private const string SecretName = "CacheConnection";
-
-        private static long lastReconnectTicks = DateTimeOffset.MinValue.UtcTicks;
-        private static DateTimeOffset firstErrorTime = DateTimeOffset.MinValue;
-        private static DateTimeOffset previousErrorTime = DateTimeOffset.MinValue;
-
-        private static readonly object reconnectLock = new object();
-
+        private static long _lastReconnectTicks = DateTimeOffset.MinValue.UtcTicks;
+        private static DateTimeOffset _firstErrorTime = DateTimeOffset.MinValue;
+        private static DateTimeOffset _previousErrorTime = DateTimeOffset.MinValue;
+        private static readonly object ReconnectLock = new object();
         public static TimeSpan ReconnectMinFrequency => TimeSpan.FromSeconds(60);
         public static TimeSpan ReconnectErrorThreshold => TimeSpan.FromSeconds(30);
-
         public static int RetryMaxAttempts => 5;
-
-        private static Lazy<ConnectionMultiplexer> lazyConnection = CreateConnection();
+        private static Lazy<ConnectionMultiplexer> _lazyConnection = CreateConnection();
+        
         public static ConnectionMultiplexer Connection
         {
-            get { return lazyConnection.Value; }
+            get { return _lazyConnection.Value; }
         }
         
-        public RedisConfig(IConfiguration configuration)
+        public RedisProvider(IConfiguration configuration)
         {
             if (Configuration == null)
             {
@@ -64,30 +60,30 @@ namespace EventHubService.Configuration
         public static void ForceReconnect()
         {
             var utcNow = DateTimeOffset.UtcNow;
-            long previousTicks = Interlocked.Read(ref lastReconnectTicks);
+            long previousTicks = Interlocked.Read(ref _lastReconnectTicks);
             var previousReconnectTime = new DateTimeOffset(previousTicks, TimeSpan.Zero);
             TimeSpan elapsedSinceLastReconnect = utcNow - previousReconnectTime;
 
             if (elapsedSinceLastReconnect < ReconnectMinFrequency)
                 return;
 
-            lock (reconnectLock)
+            lock (ReconnectLock)
             {
                 utcNow = DateTimeOffset.UtcNow;
                 elapsedSinceLastReconnect = utcNow - previousReconnectTime;
 
-                if (firstErrorTime == DateTimeOffset.MinValue)
+                if (_firstErrorTime == DateTimeOffset.MinValue)
                 {
-                    firstErrorTime = utcNow;
-                    previousErrorTime = utcNow;
+                    _firstErrorTime = utcNow;
+                    _previousErrorTime = utcNow;
                     return;
                 }
 
                 if (elapsedSinceLastReconnect < ReconnectMinFrequency)
                     return; 
 
-                TimeSpan elapsedSinceFirstError = utcNow - firstErrorTime;
-                TimeSpan elapsedSinceMostRecentError = utcNow - previousErrorTime;
+                TimeSpan elapsedSinceFirstError = utcNow - _firstErrorTime;
+                TimeSpan elapsedSinceMostRecentError = utcNow - _previousErrorTime;
 
                 bool shouldReconnect =
                     elapsedSinceFirstError >=
@@ -95,18 +91,18 @@ namespace EventHubService.Configuration
                     && elapsedSinceMostRecentError <=
                     ReconnectErrorThreshold;
 
-                previousErrorTime = utcNow;
+                _previousErrorTime = utcNow;
 
                 if (!shouldReconnect)
                     return;
 
-                firstErrorTime = DateTimeOffset.MinValue;
-                previousErrorTime = DateTimeOffset.MinValue;
+                _firstErrorTime = DateTimeOffset.MinValue;
+                _previousErrorTime = DateTimeOffset.MinValue;
 
-                Lazy<ConnectionMultiplexer> oldConnection = lazyConnection;
+                Lazy<ConnectionMultiplexer> oldConnection = _lazyConnection;
                 CloseConnection(oldConnection);
-                lazyConnection = CreateConnection();
-                Interlocked.Exchange(ref lastReconnectTicks, utcNow.UtcTicks);
+                _lazyConnection = CreateConnection();
+                Interlocked.Exchange(ref _lastReconnectTicks, utcNow.UtcTicks);
             }
         }
 
