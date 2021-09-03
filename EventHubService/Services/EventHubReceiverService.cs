@@ -41,24 +41,14 @@ namespace EventHubService.Services
             }
         }
 
-        public async Task ProcessEventHandler(ProcessEventArgs eventArgs)
+        private async Task ProcessEventHandler(ProcessEventArgs eventArgs)
         {
             var jsonStr = Encoding.UTF8.GetString(eventArgs.Data.Body.ToArray());
             
             try
             {
-                var receivedModel = JsonConvert.DeserializeObject<Root>(jsonStr);
+                JsonConvert.DeserializeObject<Root>(jsonStr);
                 _logger.LogInformation("Good object was received:\n{name}", jsonStr);
-
-                try
-                {
-                    _redisRepository.PushStringToList(jsonStr);
-                    await eventArgs.UpdateCheckpointAsync(eventArgs.CancellationToken);
-                }
-                catch (Exception)
-                {
-                    _logger.LogWarning("Invalid object was received:\n{name}", jsonStr);
-                }
             }
             catch (Exception)
             {
@@ -66,9 +56,19 @@ namespace EventHubService.Services
                 
                 await eventArgs.UpdateCheckpointAsync(eventArgs.CancellationToken);
             }
+            
+            try
+            {
+                _redisRepository.PushStringToList(jsonStr);
+                await eventArgs.UpdateCheckpointAsync(eventArgs.CancellationToken);
+            }
+            catch (Exception)
+            {
+                _logger.LogWarning("Invalid object was received:\n{name}", jsonStr);
+            }
         }
         
-        public Task ProcessErrorHandler(ProcessErrorEventArgs eventArgs)
+        private Task ProcessErrorHandler(ProcessErrorEventArgs eventArgs)
         {
             _logger.LogWarning($"\tPartition '{ eventArgs.PartitionId}': an unhandled exception was encountered. This was not expected to happen.");
             _logger.LogWarning(eventArgs.Exception.Message);

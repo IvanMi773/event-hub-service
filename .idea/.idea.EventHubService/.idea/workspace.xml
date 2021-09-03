@@ -7,38 +7,16 @@
     <projectFile profileName="SenderService">SenderService/SenderService.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="38501d3d-aae1-4bcc-94e1-1040f2cdcaed" name="Changes" comment="remove connection strings from project">
-      <change afterPath="$PROJECT_DIR$/EventHubService/bin/Debug/net5.0/Newtonsoft.Json.dll" afterDir="false" />
+    <list default="true" id="38501d3d-aae1-4bcc-94e1-1040f2cdcaed" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.EventHubService/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.EventHubService/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EventHubService/Configuration/RedisConfig.cs" beforeDir="false" afterPath="$PROJECT_DIR$/EventHubService/Providers/RedisProvider.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EventHubService/EventHubService.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/EventHubService/EventHubService.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EventHubService/Models/Root.cs" beforeDir="false" afterPath="$PROJECT_DIR$/EventHubService/Models/Root.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EventHubService/Repositories/RedisRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/EventHubService/Repositories/RedisRepository.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EventHubService/Services/EventHubReceiverService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/EventHubService/Services/EventHubReceiverService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EventHubService/Services/Validators/IValidate.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/EventHubService/Services/Validators/RootValidator.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/EventHubService/Startup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/EventHubService/Startup.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EventHubService/bin/Debug/net5.0/EventHubService.deps.json" beforeDir="false" afterPath="$PROJECT_DIR$/EventHubService/bin/Debug/net5.0/EventHubService.deps.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EventHubService/bin/Debug/net5.0/EventHubService.dll" beforeDir="false" afterPath="$PROJECT_DIR$/EventHubService/bin/Debug/net5.0/EventHubService.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EventHubService/bin/Debug/net5.0/EventHubService.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/EventHubService/bin/Debug/net5.0/EventHubService.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EventHubService/bin/Debug/net5.0/ref/EventHubService.dll" beforeDir="false" afterPath="$PROJECT_DIR$/EventHubService/bin/Debug/net5.0/ref/EventHubService.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EventHubService/obj/Debug/net5.0/EventHubService.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/EventHubService/obj/Debug/net5.0/EventHubService.assets.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EventHubService/obj/Debug/net5.0/EventHubService.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/EventHubService/obj/Debug/net5.0/EventHubService.csproj.AssemblyReference.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EventHubService/obj/Debug/net5.0/EventHubService.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/EventHubService/obj/Debug/net5.0/EventHubService.csproj.CoreCompileInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EventHubService/obj/Debug/net5.0/EventHubService.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/EventHubService/obj/Debug/net5.0/EventHubService.csproj.FileListAbsolute.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EventHubService/obj/Debug/net5.0/EventHubService.dll" beforeDir="false" afterPath="$PROJECT_DIR$/EventHubService/obj/Debug/net5.0/EventHubService.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EventHubService/obj/Debug/net5.0/EventHubService.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/EventHubService/obj/Debug/net5.0/EventHubService.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EventHubService/obj/Debug/net5.0/ref/EventHubService.dll" beforeDir="false" afterPath="$PROJECT_DIR$/EventHubService/obj/Debug/net5.0/ref/EventHubService.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EventHubService/obj/EventHubService.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/EventHubService/obj/EventHubService.csproj.nuget.dgspec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EventHubService/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/EventHubService/obj/project.assets.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EventHubService/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/EventHubService/obj/project.nuget.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EventHubService/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/EventHubService/obj/project.packagespec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EventHubService/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/EventHubService/obj/rider.project.restore.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SenderService/bin/Debug/net5.0/SenderService.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SenderService/bin/Debug/net5.0/SenderService.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SenderService/bin/Debug/net5.0/SenderService.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/SenderService/bin/Debug/net5.0/SenderService.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SenderService/obj/Debug/net5.0/SenderService.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SenderService/obj/Debug/net5.0/SenderService.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SenderService/obj/Debug/net5.0/SenderService.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/SenderService/obj/Debug/net5.0/SenderService.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SenderService/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/SenderService/obj/rider.project.restore.info" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,6 +25,14 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="mock:///home/imykhailov/RiderProjects/EventHubService/SenderService/Services/EventBusSenderService.cs" root0="SKIP_HIGHLIGHTING" />
@@ -72,7 +58,7 @@
     <property name="restartRequiresConfirmation" value="false" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
-  <component name="RunManager" selected=".NET Launch Settings Profile.SenderService">
+  <component name="RunManager" selected=".NET Launch Settings Profile.EventHubService">
     <configuration name="EventHubService" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/EventHubService/EventHubService.csproj" />
       <option name="LAUNCH_PROFILE_TFM" value="net5.0" />
@@ -142,7 +128,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1630579774597</updated>
-      <workItem from="1630579782633" duration="14366000" />
+      <workItem from="1630579782633" duration="20209000" />
     </task>
     <task id="LOCAL-00001" summary="small fixes &amp; improvements">
       <created>1630586461695</created>
@@ -165,7 +151,14 @@
       <option name="project" value="LOCAL" />
       <updated>1630590795012</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="refactor">
+      <created>1630652274347</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1630652274347</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -191,6 +184,7 @@
     <MESSAGE value="small fixes &amp; improvements" />
     <MESSAGE value="delete unused files" />
     <MESSAGE value="remove connection strings from project" />
-    <option name="LAST_COMMIT_MESSAGE" value="remove connection strings from project" />
+    <MESSAGE value="refactor" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor" />
   </component>
 </project>
