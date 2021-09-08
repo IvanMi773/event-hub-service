@@ -40,7 +40,7 @@ namespace EventHubService
 
             // Singletons
             services.AddSingleton<IRedisRepository, RedisRepository>();
-            services.AddSingleton<RedisProvider>();
+            services.AddSingleton<IRedisProvider, RedisProvider>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

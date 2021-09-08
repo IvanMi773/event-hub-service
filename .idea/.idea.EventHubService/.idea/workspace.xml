@@ -7,13 +7,8 @@
     <projectFile profileName="SenderService">SenderService/SenderService.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="38501d3d-aae1-4bcc-94e1-1040f2cdcaed" name="Changes" comment="refactor SenderController.cs &amp; EventBusSenderService.cs">
-      <change afterPath="$PROJECT_DIR$/EventHubService/Providers/IRedisProvider.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.EventHubService/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.EventHubService/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EventHubService/Providers/RedisProvider.cs" beforeDir="false" afterPath="$PROJECT_DIR$/EventHubService/Providers/RedisProvider.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EventHubService/Repositories/IRedisRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/EventHubService/Repositories/IRedisRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EventHubService/Repositories/RedisRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/EventHubService/Repositories/RedisRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EventHubService/Services/EventHubReceiverService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/EventHubService/Services/EventHubReceiverService.cs" afterDir="false" />
+    <list default="true" id="38501d3d-aae1-4bcc-94e1-1040f2cdcaed" name="Changes" comment="exception handling">
+      <change beforePath="$PROJECT_DIR$/EventHubService/Startup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/EventHubService/Startup.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -125,7 +120,7 @@
       <updated>1630579774597</updated>
       <workItem from="1630579782633" duration="24740000" />
       <workItem from="1630927506988" duration="840000" />
-      <workItem from="1631087500281" duration="1122000" />
+      <workItem from="1631087500281" duration="1783000" />
     </task>
     <task id="LOCAL-00001" summary="small fixes &amp; improvements">
       <created>1630586461695</created>
@@ -169,7 +164,21 @@
       <option name="project" value="LOCAL" />
       <updated>1631088116767</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="refactor RedisProvider.cs &amp; EventHubReceiverService.cs and exception handling in controller">
+      <created>1631089201319</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1631089201319</updated>
+    </task>
+    <task id="LOCAL-00008" summary="exception handling">
+      <created>1631089222432</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1631089222432</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -199,6 +208,8 @@
     <MESSAGE value="refactor" />
     <MESSAGE value="refactor ProcessEventHandler method" />
     <MESSAGE value="refactor SenderController.cs &amp; EventBusSenderService.cs" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor SenderController.cs &amp; EventBusSenderService.cs" />
+    <MESSAGE value="refactor RedisProvider.cs &amp; EventHubReceiverService.cs and exception handling in controller" />
+    <MESSAGE value="exception handling" />
+    <option name="LAST_COMMIT_MESSAGE" value="exception handling" />
   </component>
 </project>
