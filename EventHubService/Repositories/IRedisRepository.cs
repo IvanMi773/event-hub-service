@@ -2,6 +2,6 @@ namespace EventHubService.Repositories
 {
     public interface IRedisRepository
     {
-        void PushStringToList(string str);
+        void PushStringToList(string listName, string str);
     }
 }

@@ -7,11 +7,13 @@
     <projectFile profileName="SenderService">SenderService/SenderService.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="38501d3d-aae1-4bcc-94e1-1040f2cdcaed" name="Changes" comment="">
+    <list default="true" id="38501d3d-aae1-4bcc-94e1-1040f2cdcaed" name="Changes" comment="refactor SenderController.cs &amp; EventBusSenderService.cs">
+      <change afterPath="$PROJECT_DIR$/EventHubService/Providers/IRedisProvider.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.EventHubService/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.EventHubService/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SenderService/Controllers/SenderController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SenderService/Controllers/SenderController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SenderService/Services/EventBusSenderService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SenderService/Services/EventBusSenderService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SenderService/obj/Debug/net5.0/SenderService.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/SenderService/obj/Debug/net5.0/SenderService.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EventHubService/Providers/RedisProvider.cs" beforeDir="false" afterPath="$PROJECT_DIR$/EventHubService/Providers/RedisProvider.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EventHubService/Repositories/IRedisRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/EventHubService/Repositories/IRedisRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EventHubService/Repositories/RedisRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/EventHubService/Repositories/RedisRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EventHubService/Services/EventHubReceiverService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/EventHubService/Services/EventHubReceiverService.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -123,7 +125,7 @@
       <updated>1630579774597</updated>
       <workItem from="1630579782633" duration="24740000" />
       <workItem from="1630927506988" duration="840000" />
-      <workItem from="1631087500281" duration="450000" />
+      <workItem from="1631087500281" duration="1122000" />
     </task>
     <task id="LOCAL-00001" summary="small fixes &amp; improvements">
       <created>1630586461695</created>
@@ -160,7 +162,14 @@
       <option name="project" value="LOCAL" />
       <updated>1630666239351</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="refactor SenderController.cs &amp; EventBusSenderService.cs">
+      <created>1631088116767</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1631088116767</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -189,6 +198,7 @@
     <MESSAGE value="remove connection strings from project" />
     <MESSAGE value="refactor" />
     <MESSAGE value="refactor ProcessEventHandler method" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor ProcessEventHandler method" />
+    <MESSAGE value="refactor SenderController.cs &amp; EventBusSenderService.cs" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor SenderController.cs &amp; EventBusSenderService.cs" />
   </component>
 </project>

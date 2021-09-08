@@ -22,10 +22,10 @@ namespace EventHubService.Services
         private const string BlobStorageConnectionStringKey = "BlobStorageConnectionString";
         private const string BlobContainerNameKey = "BlobContainerName";
         
-        private static BlobContainerClient _storageClient;      
-        private static EventProcessorClient _processor;
+        private BlobContainerClient _storageClient;      
+        private EventProcessorClient _processor;
 
-        private static IConfiguration Configuration { get; set; }
+        private readonly IConfiguration _configuration;
         private readonly ILogger<EventHubReceiverService> _logger;
 
         private readonly IRedisRepository _redisRepository;
@@ -35,10 +35,7 @@ namespace EventHubService.Services
             _logger = logger;
             _redisRepository = redisRepository;
             
-            if (Configuration == null)
-            {
-                Configuration = configuration;
-            }
+            _configuration = configuration;
         }
 
         private async Task ProcessEventHandler(ProcessEventArgs eventArgs)
@@ -59,7 +56,7 @@ namespace EventHubService.Services
             
             try
             {
-                _redisRepository.PushStringToList(jsonStr);
+                _redisRepository.PushStringToList("roots", jsonStr);
                 await eventArgs.UpdateCheckpointAsync(eventArgs.CancellationToken);
             }
             catch (Exception)
@@ -79,8 +76,8 @@ namespace EventHubService.Services
         public Task StartAsync(CancellationToken cancellationToken)
         {
             string consumerGroup = EventHubConsumerClient.DefaultConsumerGroupName;
-            _storageClient = new BlobContainerClient(Configuration[BlobStorageConnectionStringKey], Configuration[BlobContainerNameKey]);
-            _processor = new EventProcessorClient(_storageClient, consumerGroup, Configuration[EhubNamespaceConnectionStringKey], Configuration[EventHubNameKey]);
+            _storageClient = new BlobContainerClient(_configuration[BlobStorageConnectionStringKey], _configuration[BlobContainerNameKey]);
+            _processor = new EventProcessorClient(_storageClient, consumerGroup, _configuration[EhubNamespaceConnectionStringKey], _configuration[EventHubNameKey]);
 
             _processor.ProcessEventAsync += ProcessEventHandler;
             _processor.ProcessErrorAsync += ProcessErrorHandler;
