@@ -6,35 +6,32 @@ using Azure.Messaging.EventHubs;
 using Azure.Messaging.EventHubs.Producer;
 using Microsoft.AspNetCore.Mvc.Diagnostics;
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Logging;
 using SenderService.Models;
 using EventData = Azure.Messaging.EventHubs.EventData;
 
 namespace SenderService.Services
 {
-    public class EventBusSenderService
+    public class EventBusSenderService : IDisposable
     {
         private const string EhubNamespaceConnectionStringKey = "EhubNamespaceConnectionString";
         private const string EventHubNameKey = "EventHubName";
-        
-        private static IConfiguration Configuration { get; set; }
+        private readonly IConfiguration _configuration;
+        private readonly EventHubProducerClient _producerClient;
+        private readonly ILogger<EventBusSenderService> _logger;
 
-        private static EventHubProducerClient _producerClient;
-
-        public EventBusSenderService(IConfiguration configuration)
+        public EventBusSenderService(IConfiguration configuration, ILogger<EventBusSenderService> logger)
         {
-            if (Configuration == null)
-            {
-                Configuration = configuration;
-            }
+            _configuration = configuration;
+            _logger = logger;
+            _producerClient = new EventHubProducerClient(
+                _configuration[EhubNamespaceConnectionStringKey], 
+                _configuration[EventHubNameKey]
+            );
         }
 
         public async Task SendMessage(Root root)
         {
-            _producerClient = new EventHubProducerClient(
-                Configuration[EhubNamespaceConnectionStringKey], 
-                Configuration[EventHubNameKey]
-                );
-
             using EventDataBatch eventBatch = await _producerClient.CreateBatchAsync();
             
             if (!eventBatch.TryAdd(new EventData(JsonSerializer.Serialize(root))))
@@ -46,10 +43,15 @@ namespace SenderService.Services
             {
                 await _producerClient.SendAsync(eventBatch);
             }
-            finally
+            catch (Exception)
             {
-                await _producerClient.DisposeAsync();
+                _logger.LogError("Error while sending messages");
             }
+        }
+
+        public async void Dispose()
+        {
+            await _producerClient.DisposeAsync();
         }
     }
 }

@@ -14,7 +14,7 @@ namespace SenderService.Controllers
             _sender = sender;
         }
 
-        [HttpGet("send")]
+        [HttpPost("send")]
         public async Task<string> Send([FromBody] Root root)
         {
             await _sender.SendMessage(root);

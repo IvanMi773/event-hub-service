@@ -9,14 +9,9 @@
   <component name="ChangeListManager">
     <list default="true" id="38501d3d-aae1-4bcc-94e1-1040f2cdcaed" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.EventHubService/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.EventHubService/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EventHubService/Services/EventHubReceiverService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/EventHubService/Services/EventHubReceiverService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EventHubService/bin/Debug/net5.0/EventHubService.dll" beforeDir="false" afterPath="$PROJECT_DIR$/EventHubService/bin/Debug/net5.0/EventHubService.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EventHubService/bin/Debug/net5.0/EventHubService.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/EventHubService/bin/Debug/net5.0/EventHubService.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EventHubService/bin/Debug/net5.0/ref/EventHubService.dll" beforeDir="false" afterPath="$PROJECT_DIR$/EventHubService/bin/Debug/net5.0/ref/EventHubService.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EventHubService/obj/Debug/net5.0/EventHubService.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/EventHubService/obj/Debug/net5.0/EventHubService.csproj.CoreCompileInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EventHubService/obj/Debug/net5.0/EventHubService.dll" beforeDir="false" afterPath="$PROJECT_DIR$/EventHubService/obj/Debug/net5.0/EventHubService.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EventHubService/obj/Debug/net5.0/EventHubService.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/EventHubService/obj/Debug/net5.0/EventHubService.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EventHubService/obj/Debug/net5.0/ref/EventHubService.dll" beforeDir="false" afterPath="$PROJECT_DIR$/EventHubService/obj/Debug/net5.0/ref/EventHubService.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SenderService/Controllers/SenderController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SenderService/Controllers/SenderController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SenderService/Services/EventBusSenderService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SenderService/Services/EventBusSenderService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SenderService/obj/Debug/net5.0/SenderService.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/SenderService/obj/Debug/net5.0/SenderService.csproj.AssemblyReference.cache" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,9 +30,7 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="mock:///home/imykhailov/RiderProjects/EventHubService/SenderService/Services/EventBusSenderService.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/7ca8898b690a4181a32a9cf767cedb1ea9c28/28/JsonConvert.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///home/imykhailov/RiderProjects/EventHubService/EventHubService/Repositories/RedisRepository.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="ProjectId" id="1xa4H93oDt5S22cjdlQcZo33pHo" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -128,7 +121,9 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1630579774597</updated>
-      <workItem from="1630579782633" duration="20209000" />
+      <workItem from="1630579782633" duration="24740000" />
+      <workItem from="1630927506988" duration="840000" />
+      <workItem from="1631087500281" duration="450000" />
     </task>
     <task id="LOCAL-00001" summary="small fixes &amp; improvements">
       <created>1630586461695</created>
@@ -158,14 +153,21 @@
       <option name="project" value="LOCAL" />
       <updated>1630652274347</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="refactor ProcessEventHandler method">
+      <created>1630666239351</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1630666239351</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
-  <component name="UnityProjectConfiguration" hasMinimizedUI="null" />
+  <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="UnityUnitTestConfiguration" currentTestLauncher="NUnit" />
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -177,6 +179,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
@@ -185,6 +188,7 @@
     <MESSAGE value="delete unused files" />
     <MESSAGE value="remove connection strings from project" />
     <MESSAGE value="refactor" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor" />
+    <MESSAGE value="refactor ProcessEventHandler method" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor ProcessEventHandler method" />
   </component>
 </project>
