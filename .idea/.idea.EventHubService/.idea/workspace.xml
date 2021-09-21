@@ -6,9 +6,79 @@
     <projectFile profileName="IIS Express">SenderService/SenderService.csproj</projectFile>
     <projectFile profileName="SenderService">SenderService/SenderService.csproj</projectFile>
   </component>
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="38501d3d-aae1-4bcc-94e1-1040f2cdcaed" name="Changes" comment="exception handling">
-      <change beforePath="$PROJECT_DIR$/EventHubService/Startup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/EventHubService/Startup.cs" afterDir="false" />
+    <list default="true" id="38501d3d-aae1-4bcc-94e1-1040f2cdcaed" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/EventHubService/bin/Debug/net5.0/EventHubService.exe" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EventHubService/obj/Debug/net5.0/apphost.exe" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SenderService/Providers/IRedisProvider.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SenderService/Providers/RedisProvider.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SenderService/Repositories/IRedisRepository.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SenderService/Repositories/RedisRepository.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SenderService/Services/SenderService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SenderService/bin/Debug/net5.0/Pipelines.Sockets.Unofficial.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SenderService/bin/Debug/net5.0/SenderService.exe" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SenderService/bin/Debug/net5.0/StackExchange.Redis.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SenderService/bin/Debug/net5.0/System.Configuration.ConfigurationManager.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SenderService/bin/Debug/net5.0/System.Diagnostics.PerformanceCounter.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SenderService/bin/Debug/net5.0/System.Security.Cryptography.ProtectedData.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SenderService/bin/Debug/net5.0/runtimes/win/lib/netcoreapp2.0/System.Diagnostics.PerformanceCounter.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SenderService/bin/Debug/net5.0/runtimes/win/lib/netstandard2.0/System.Security.Cryptography.ProtectedData.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SenderService/obj/Debug/net5.0/apphost.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.EventHubService/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.EventHubService/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EventHubService/Models/Root.cs" beforeDir="false" afterPath="$PROJECT_DIR$/EventHubService/Models/Root.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EventHubService/Properties/launchSettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/EventHubService/Properties/launchSettings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EventHubService/Repositories/IRedisRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/EventHubService/Repositories/IRedisRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EventHubService/Repositories/RedisRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/EventHubService/Repositories/RedisRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EventHubService/Services/EventHubReceiverService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/EventHubService/Services/EventHubReceiverService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EventHubService/bin/Debug/net5.0/EventHubService.dll" beforeDir="false" afterPath="$PROJECT_DIR$/EventHubService/bin/Debug/net5.0/EventHubService.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EventHubService/bin/Debug/net5.0/EventHubService.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/EventHubService/bin/Debug/net5.0/EventHubService.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EventHubService/bin/Debug/net5.0/EventHubService.runtimeconfig.dev.json" beforeDir="false" afterPath="$PROJECT_DIR$/EventHubService/bin/Debug/net5.0/EventHubService.runtimeconfig.dev.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EventHubService/bin/Debug/net5.0/ref/EventHubService.dll" beforeDir="false" afterPath="$PROJECT_DIR$/EventHubService/bin/Debug/net5.0/ref/EventHubService.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EventHubService/obj/Debug/net5.0/EventHubService.GeneratedMSBuildEditorConfig.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/EventHubService/obj/Debug/net5.0/EventHubService.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EventHubService/obj/Debug/net5.0/EventHubService.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/EventHubService/obj/Debug/net5.0/EventHubService.assets.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EventHubService/obj/Debug/net5.0/EventHubService.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/EventHubService/obj/Debug/net5.0/EventHubService.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EventHubService/obj/Debug/net5.0/EventHubService.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/EventHubService/obj/Debug/net5.0/EventHubService.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EventHubService/obj/Debug/net5.0/EventHubService.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/EventHubService/obj/Debug/net5.0/EventHubService.csproj.FileListAbsolute.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EventHubService/obj/Debug/net5.0/EventHubService.dll" beforeDir="false" afterPath="$PROJECT_DIR$/EventHubService/obj/Debug/net5.0/EventHubService.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EventHubService/obj/Debug/net5.0/EventHubService.genruntimeconfig.cache" beforeDir="false" afterPath="$PROJECT_DIR$/EventHubService/obj/Debug/net5.0/EventHubService.genruntimeconfig.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EventHubService/obj/Debug/net5.0/EventHubService.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/EventHubService/obj/Debug/net5.0/EventHubService.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EventHubService/obj/Debug/net5.0/ref/EventHubService.dll" beforeDir="false" afterPath="$PROJECT_DIR$/EventHubService/obj/Debug/net5.0/ref/EventHubService.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EventHubService/obj/EventHubService.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/EventHubService/obj/EventHubService.csproj.nuget.dgspec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EventHubService/obj/EventHubService.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/EventHubService/obj/EventHubService.csproj.nuget.g.props" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EventHubService/obj/EventHubService.csproj.nuget.g.targets" beforeDir="false" afterPath="$PROJECT_DIR$/EventHubService/obj/EventHubService.csproj.nuget.g.targets" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EventHubService/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/EventHubService/obj/project.assets.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EventHubService/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/EventHubService/obj/project.nuget.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EventHubService/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/EventHubService/obj/project.packagespec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EventHubService/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/EventHubService/obj/rider.project.restore.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SenderService/Models/Root.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SenderService/Models/Root.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SenderService/Properties/launchSettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/SenderService/Properties/launchSettings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SenderService/SenderService.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/SenderService/SenderService.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SenderService/Services/EventBusSenderService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SenderService/Services/EventBusSenderService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SenderService/Startup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SenderService/Startup.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SenderService/bin/Debug/net5.0/SenderService.deps.json" beforeDir="false" afterPath="$PROJECT_DIR$/SenderService/bin/Debug/net5.0/SenderService.deps.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SenderService/bin/Debug/net5.0/SenderService.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SenderService/bin/Debug/net5.0/SenderService.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SenderService/bin/Debug/net5.0/SenderService.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/SenderService/bin/Debug/net5.0/SenderService.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SenderService/bin/Debug/net5.0/SenderService.runtimeconfig.dev.json" beforeDir="false" afterPath="$PROJECT_DIR$/SenderService/bin/Debug/net5.0/SenderService.runtimeconfig.dev.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SenderService/bin/Debug/net5.0/ref/SenderService.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SenderService/bin/Debug/net5.0/ref/SenderService.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SenderService/obj/Debug/net5.0/SenderService.GeneratedMSBuildEditorConfig.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/SenderService/obj/Debug/net5.0/SenderService.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SenderService/obj/Debug/net5.0/SenderService.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/SenderService/obj/Debug/net5.0/SenderService.assets.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SenderService/obj/Debug/net5.0/SenderService.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/SenderService/obj/Debug/net5.0/SenderService.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SenderService/obj/Debug/net5.0/SenderService.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/SenderService/obj/Debug/net5.0/SenderService.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SenderService/obj/Debug/net5.0/SenderService.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/SenderService/obj/Debug/net5.0/SenderService.csproj.FileListAbsolute.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SenderService/obj/Debug/net5.0/SenderService.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SenderService/obj/Debug/net5.0/SenderService.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SenderService/obj/Debug/net5.0/SenderService.genruntimeconfig.cache" beforeDir="false" afterPath="$PROJECT_DIR$/SenderService/obj/Debug/net5.0/SenderService.genruntimeconfig.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SenderService/obj/Debug/net5.0/SenderService.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/SenderService/obj/Debug/net5.0/SenderService.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SenderService/obj/Debug/net5.0/ref/SenderService.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SenderService/obj/Debug/net5.0/ref/SenderService.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SenderService/obj/SenderService.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/SenderService/obj/SenderService.csproj.nuget.dgspec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SenderService/obj/SenderService.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/SenderService/obj/SenderService.csproj.nuget.g.props" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SenderService/obj/SenderService.csproj.nuget.g.targets" beforeDir="false" afterPath="$PROJECT_DIR$/SenderService/obj/SenderService.csproj.nuget.g.targets" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SenderService/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/SenderService/obj/project.assets.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SenderService/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/SenderService/obj/project.nuget.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SenderService/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/SenderService/obj/project.packagespec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SenderService/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/SenderService/obj/rider.project.restore.info" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,6 +97,8 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/29a328843bdc4762af89c8fdc084c4d68f5778/52/DateTime.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/d11287d39adc433396a7b280e2c891e098600/60/8ac3d2fc/IDatabase.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/7ca8898b690a4181a32a9cf767cedb1ea9c28/28/JsonConvert.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="ProjectId" id="1xa4H93oDt5S22cjdlQcZo33pHo" />
@@ -44,12 +116,16 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="restartRequiresConfirmation" value="false" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager" selected=".NET Launch Settings Profile.EventHubService">
-    <configuration name="EventHubService" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
+    <configuration name="EventHubService" type="LaunchSettings" factoryName=".NET Launch Settings Profile" singleton="false">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/EventHubService/EventHubService.csproj" />
       <option name="LAUNCH_PROFILE_TFM" value="net5.0" />
       <option name="LAUNCH_PROFILE_NAME" value="EventHubService" />
@@ -109,6 +185,12 @@
         <option name="Build" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue=".NET Launch Settings Profile.EventHubService" />
+      <item itemvalue=".NET Launch Settings Profile.EventHubService: IIS Express" />
+      <item itemvalue=".NET Launch Settings Profile.SenderService" />
+      <item itemvalue=".NET Launch Settings Profile.SenderService: IIS Express" />
+    </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -121,6 +203,8 @@
       <workItem from="1630579782633" duration="24740000" />
       <workItem from="1630927506988" duration="840000" />
       <workItem from="1631087500281" duration="1783000" />
+      <workItem from="1632211613476" duration="638000" />
+      <workItem from="1632212910620" duration="18301000" />
     </task>
     <task id="LOCAL-00001" summary="small fixes &amp; improvements">
       <created>1630586461695</created>
