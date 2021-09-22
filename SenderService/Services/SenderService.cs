@@ -30,7 +30,6 @@ namespace SenderService.Services
                 UserId = Guid.NewGuid().ToString()
             };
             
-            _redisRepository.AddToHash("ingest-event-hub-hash", root.Id, root.Timestamp);
             await _eventBusSenderService.SendMessage(root);
         }
 

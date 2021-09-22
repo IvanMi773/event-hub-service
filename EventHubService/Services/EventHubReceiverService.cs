@@ -43,20 +43,21 @@ namespace EventHubService.Services
         private async Task ProcessEventHandler(ProcessEventArgs eventArgs)
         {
             var jsonStr = Encoding.UTF8.GetString(eventArgs.Data.Body.ToArray());
-            Root deserializedRoot = new ();
+            
             try
             {
-                deserializedRoot = JsonConvert.DeserializeObject<Root>(jsonStr);
+                var deserializedRoot = JsonConvert.DeserializeObject<Root>(jsonStr);
 
-                var timestamp = _redisRepository.GetFromHash("ingest-event-hub-hash", deserializedRoot?.Id);
-                var eventTimestampDate = DateTime.Parse(deserializedRoot.Timestamp);
-                var redisTimestampDate = DateTime.Parse(timestamp);
-
-                if (DateTime.Compare(eventTimestampDate, redisTimestampDate) >= 0)
+                var timestamp = _redisRepository.GetFromHash("ingest-event-hub-hash", deserializedRoot.Id);
+                DateTime.TryParse(deserializedRoot.Timestamp, out var eventTimestampDate);
+                DateTime.TryParse(timestamp, out var redisTimestampDate);
+                
+                if (string.IsNullOrEmpty(timestamp) || DateTime.Compare(eventTimestampDate, redisTimestampDate) >= 0)
                 {
+                    _logger.LogInformation(jsonStr);
                     _redisRepository.SetIntoHash("ingest-event-hub-hash", deserializedRoot.Id, deserializedRoot.Timestamp);
                     _redisRepository.PushStringToList("roots", jsonStr);
-                }
+                } 
             }
             catch (Exception e)
             {
