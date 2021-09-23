@@ -1,4 +1,5 @@
 using System;
+using System.Globalization;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -21,8 +22,8 @@ namespace EventHubService.Services
         private const string EventHubNameKey = "EventHubName";
         private const string BlobStorageConnectionStringKey = "BlobStorageConnectionString";
         private const string BlobContainerNameKey = "BlobContainerName";
-        
-        private BlobContainerClient _storageClient;      
+
+        private BlobContainerClient _storageClient;
         private EventProcessorClient _processor;
 
         private readonly IConfiguration _configuration;
@@ -30,11 +31,12 @@ namespace EventHubService.Services
 
         private readonly IRedisRepository _redisRepository;
 
-        public EventHubReceiverService(IConfiguration configuration, ILogger<EventHubReceiverService> logger, IRedisRepository redisRepository)
+        public EventHubReceiverService(IConfiguration configuration, ILogger<EventHubReceiverService> logger,
+            IRedisRepository redisRepository)
         {
             _logger = logger;
             _redisRepository = redisRepository;
-            
+
             _configuration = configuration;
         }
 
@@ -44,45 +46,55 @@ namespace EventHubService.Services
             
             try
             {
-                JsonConvert.DeserializeObject<Root>(jsonStr);
-                _logger.LogInformation("Good object was received:\n{name}", jsonStr);
-            }
-            catch (Exception)
-            {
-                _logger.LogWarning("Invalid object was received:\n{name}", jsonStr);
+                var deserializedRoot = JsonConvert.DeserializeObject<Root>(jsonStr);
+
+                var timestamp = _redisRepository.GetFromHash("ingest-event-hub-hash", deserializedRoot.Id);
+                Console.WriteLine(timestamp);
+                DateTime.TryParse(deserializedRoot.Timestamp, out var eventTimestampDate);
+                DateTime.TryParse(timestamp, out var redisTimestampDate);
                 
-                await eventArgs.UpdateCheckpointAsync(eventArgs.CancellationToken);
+                if (string.IsNullOrEmpty(timestamp) || DateTime.Compare(eventTimestampDate, redisTimestampDate) > 0)
+                {
+                    _logger.LogInformation(jsonStr);
+                    _redisRepository.SetIntoHash("ingest-event-hub-hash", deserializedRoot.Id, deserializedRoot.Timestamp);
+                    _redisRepository.PushStringToList("roots", jsonStr);
+                }
+                else
+                {
+                    _logger.LogInformation("event was skipped");
+                }
             }
-            
-            try
+            catch (Exception e)
             {
-                _redisRepository.PushStringToList("roots", jsonStr);
-                await eventArgs.UpdateCheckpointAsync(eventArgs.CancellationToken);
+                _logger.LogError(e.Message);
             }
-            catch (Exception)
+            finally
             {
-                _logger.LogWarning("Invalid object was received:\n{name}", jsonStr);
+                await eventArgs.UpdateCheckpointAsync(eventArgs.CancellationToken);
             }
         }
-        
+
         private Task ProcessErrorHandler(ProcessErrorEventArgs eventArgs)
         {
-            _logger.LogWarning($"\tPartition '{ eventArgs.PartitionId}': an unhandled exception was encountered. This was not expected to happen.");
+            _logger.LogWarning(
+                $"\tPartition '{eventArgs.PartitionId}': an unhandled exception was encountered. This was not expected to happen.");
             _logger.LogWarning(eventArgs.Exception.Message);
-            
+
             return Task.CompletedTask;
         }
 
         public Task StartAsync(CancellationToken cancellationToken)
         {
             string consumerGroup = EventHubConsumerClient.DefaultConsumerGroupName;
-            _storageClient = new BlobContainerClient(_configuration[BlobStorageConnectionStringKey], _configuration[BlobContainerNameKey]);
-            _processor = new EventProcessorClient(_storageClient, consumerGroup, _configuration[EhubNamespaceConnectionStringKey], _configuration[EventHubNameKey]);
+            _storageClient = new BlobContainerClient(_configuration[BlobStorageConnectionStringKey],
+                _configuration[BlobContainerNameKey]);
+            _processor = new EventProcessorClient(_storageClient, consumerGroup,
+                _configuration[EhubNamespaceConnectionStringKey], _configuration[EventHubNameKey]);
 
             _processor.ProcessEventAsync += ProcessEventHandler;
             _processor.ProcessErrorAsync += ProcessErrorHandler;
             _processor.StartProcessingAsync(cancellationToken);
-            
+
             return Task.CompletedTask;
         }
 

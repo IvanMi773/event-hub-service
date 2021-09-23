@@ -7,20 +7,28 @@ namespace EventHubService.Repositories
 {
     public class RedisRepository : IRedisRepository
     {
-        private readonly RedisProvider _redisProvider;
         private readonly ILogger<RedisRepository> _logger;
-        private readonly IDatabase cache;
+        private readonly IDatabase _cache;
 
-        public RedisRepository(RedisProvider redisProvider, ILogger<RedisRepository> logger)
+        public RedisRepository(IRedisProvider redisProvider, ILogger<RedisRepository> logger)
         {
-            _redisProvider = redisProvider;
             _logger = logger;
-            cache = _redisProvider.GetDatabase();
+            _cache = redisProvider.GetDatabase();
         }
 
         public void PushStringToList(string listName, string str)
         {
-            _logger.LogInformation("Count of elements in list: " + cache.ListRightPush(listName, str));
+             _cache.ListRightPush(listName, str);
+        }
+
+        public void SetIntoHash(string hashName, string key, string value)
+        {
+            _cache.HashSet(hashName, key, value);
+        }
+        
+        public string GetFromHash(string hashName, string key)
+        {
+            return _cache.HashGet(hashName, key);
         }
     }
 }

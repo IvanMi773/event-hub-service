@@ -1,13 +1,11 @@
 using System;
-using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
-using Azure.Messaging.EventHubs;
 using Azure.Messaging.EventHubs.Producer;
-using Microsoft.AspNetCore.Mvc.Diagnostics;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using SenderService.Models;
+using SenderService.Repositories;
 using EventData = Azure.Messaging.EventHubs.EventData;
 
 namespace SenderService.Services
@@ -19,11 +17,13 @@ namespace SenderService.Services
         private readonly IConfiguration _configuration;
         private readonly EventHubProducerClient _producerClient;
         private readonly ILogger<EventBusSenderService> _logger;
+        private readonly IRedisRepository _redisRepository;
 
-        public EventBusSenderService(IConfiguration configuration, ILogger<EventBusSenderService> logger)
+        public EventBusSenderService(IConfiguration configuration, ILogger<EventBusSenderService> logger, IRedisRepository redisRepository)
         {
             _configuration = configuration;
             _logger = logger;
+            _redisRepository = redisRepository;
             _producerClient = new EventHubProducerClient(
                 _configuration[EhubNamespaceConnectionStringKey], 
                 _configuration[EventHubNameKey]

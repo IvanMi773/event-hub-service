@@ -1,16 +1,11 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
+using SenderService.Providers;
+using SenderService.Repositories;
 using SenderService.Services;
 
 namespace SenderService
@@ -34,6 +29,9 @@ namespace SenderService
             });
             
             services.AddSingleton<EventBusSenderService>();
+            services.AddSingleton<IRedisProvider, RedisProvider>();
+            services.AddSingleton<IRedisRepository, RedisRepository>();
+            services.AddHostedService<Services.SenderService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
