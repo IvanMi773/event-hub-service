@@ -49,15 +49,20 @@ namespace EventHubService.Services
                 var deserializedRoot = JsonConvert.DeserializeObject<Root>(jsonStr);
 
                 var timestamp = _redisRepository.GetFromHash("ingest-event-hub-hash", deserializedRoot.Id);
+                Console.WriteLine(timestamp);
                 DateTime.TryParse(deserializedRoot.Timestamp, out var eventTimestampDate);
                 DateTime.TryParse(timestamp, out var redisTimestampDate);
                 
-                if (string.IsNullOrEmpty(timestamp) || DateTime.Compare(eventTimestampDate, redisTimestampDate) >= 0)
+                if (string.IsNullOrEmpty(timestamp) || DateTime.Compare(eventTimestampDate, redisTimestampDate) > 0)
                 {
                     _logger.LogInformation(jsonStr);
                     _redisRepository.SetIntoHash("ingest-event-hub-hash", deserializedRoot.Id, deserializedRoot.Timestamp);
                     _redisRepository.PushStringToList("roots", jsonStr);
-                } 
+                }
+                else
+                {
+                    _logger.LogInformation("event was skipped");
+                }
             }
             catch (Exception e)
             {

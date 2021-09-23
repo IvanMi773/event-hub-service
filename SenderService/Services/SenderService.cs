@@ -10,21 +10,18 @@ namespace SenderService.Services
     public class SenderService : IHostedService
     {
         private readonly EventBusSenderService _eventBusSenderService;
-        private readonly IRedisRepository _redisRepository;
-        private Timer _timer;
 
-        public SenderService(EventBusSenderService eventBusSenderService, IRedisRepository redisRepository)
+        public SenderService(EventBusSenderService eventBusSenderService)
         {
             _eventBusSenderService = eventBusSenderService;
-            _redisRepository = redisRepository;
         }
 
-        private async void SendMessage(object state)
+        private async void SendMessage(string id)
         {
             var root = new Root
             {
                 Type = "type",
-                Id = Guid.NewGuid().ToString(),
+                Id = id,
                 Timestamp = DateTime.Now.ToString(),
                 DeviceId = Guid.NewGuid().ToString(),
                 UserId = Guid.NewGuid().ToString()
@@ -35,7 +32,32 @@ namespace SenderService.Services
 
         public Task StartAsync(CancellationToken cancellationToken)
         {
-            _timer = new Timer(SendMessage, null, TimeSpan.Zero, TimeSpan.FromMilliseconds(100));
+            Task.Run(() =>
+            {
+                for (int i = 0; i < 4000; i++)
+                {
+                    SendMessage("Id number 1 (selected)");
+                    Thread.Sleep(300);
+                }
+            });
+            
+            Task.Run(() =>
+            {
+                for (int i = 0; i < 4000; i++)
+                {
+                    SendMessage("Id number 2");
+                    Thread.Sleep(100);
+                }
+            });
+            
+            Task.Run(() =>
+            {
+                for (int i = 0; i < 4000; i++)
+                {
+                    SendMessage("Id number 3");
+                    Thread.Sleep(100);
+                }
+            });
             
             return Task.CompletedTask;
         }

@@ -10,18 +10,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="38501d3d-aae1-4bcc-94e1-1040f2cdcaed" name="Changes" comment="timestamp check">
+    <list default="true" id="38501d3d-aae1-4bcc-94e1-1040f2cdcaed" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.EventHubService/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.EventHubService/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EventHubService/Properties/launchSettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/EventHubService/Properties/launchSettings.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EventHubService/Services/EventHubReceiverService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/EventHubService/Services/EventHubReceiverService.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EventHubService/bin/Debug/net5.0/EventHubService.dll" beforeDir="false" afterPath="$PROJECT_DIR$/EventHubService/bin/Debug/net5.0/EventHubService.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EventHubService/bin/Debug/net5.0/EventHubService.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/EventHubService/bin/Debug/net5.0/EventHubService.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EventHubService/obj/Debug/net5.0/EventHubService.dll" beforeDir="false" afterPath="$PROJECT_DIR$/EventHubService/obj/Debug/net5.0/EventHubService.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EventHubService/obj/Debug/net5.0/EventHubService.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/EventHubService/obj/Debug/net5.0/EventHubService.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SenderService/Properties/launchSettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/SenderService/Properties/launchSettings.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SenderService/Services/SenderService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SenderService/Services/SenderService.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SenderService/bin/Debug/net5.0/SenderService.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SenderService/bin/Debug/net5.0/SenderService.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SenderService/bin/Debug/net5.0/SenderService.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/SenderService/bin/Debug/net5.0/SenderService.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SenderService/bin/Debug/net5.0/ref/SenderService.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SenderService/bin/Debug/net5.0/ref/SenderService.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SenderService/obj/Debug/net5.0/SenderService.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SenderService/obj/Debug/net5.0/SenderService.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SenderService/obj/Debug/net5.0/SenderService.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/SenderService/obj/Debug/net5.0/SenderService.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SenderService/obj/Debug/net5.0/ref/SenderService.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SenderService/obj/Debug/net5.0/ref/SenderService.dll" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -147,7 +151,8 @@
       <workItem from="1630927506988" duration="840000" />
       <workItem from="1631087500281" duration="1783000" />
       <workItem from="1632211613476" duration="638000" />
-      <workItem from="1632212910620" duration="26089000" />
+      <workItem from="1632212910620" duration="36380000" />
+      <workItem from="1632310561893" duration="20199000" />
     </task>
     <task id="LOCAL-00001" summary="small fixes &amp; improvements">
       <created>1630586461695</created>
@@ -212,7 +217,14 @@
       <option name="project" value="LOCAL" />
       <updated>1632235800217</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="upd">
+      <created>1632299474035</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1632299474035</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -245,6 +257,7 @@
     <MESSAGE value="refactor RedisProvider.cs &amp; EventHubReceiverService.cs and exception handling in controller" />
     <MESSAGE value="exception handling" />
     <MESSAGE value="timestamp check" />
-    <option name="LAST_COMMIT_MESSAGE" value="timestamp check" />
+    <MESSAGE value="upd" />
+    <option name="LAST_COMMIT_MESSAGE" value="upd" />
   </component>
 </project>
